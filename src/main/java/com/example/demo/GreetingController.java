@@ -16,4 +16,11 @@ public class GreetingController {
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
+
+    // just added a new GET method for fun
+    @GetMapping("/what")
+    public Greeting what(@RequestParam(value = "color", defaultValue = "Black") String color) {
+        return new Greeting(counter.incrementAndGet(), String.format(template, color));
+    }
+
 }
